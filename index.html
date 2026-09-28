@@ -1,49 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#171512">
-  <meta name="description" content="The Jess Alan Krick Podcast: Build it. Fix it. Grow it. Live it.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#211812">
+  <meta name="description" content="The Jess Alan Krick Podcast. Build it. Fix it. Grow it. Live it. Real stories about ranching, construction, equipment, coffee, music, and a lifetime of learning by doing.">
   <title>The Jess Alan Krick Podcast</title>
   <style>
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #171512; color: #f4efe5; line-height: 1.6; }
-    a { color: #e2b86e; }
-    .wrap { max-width: 1040px; margin: auto; padding: 0 24px; }
-    header { padding: 22px 0; border-bottom: 1px solid #ffffff25; }
-    header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-    .brand { color: #f4efe5; font-size: 16px; font-weight: 700; text-decoration: none; }
-    nav a { margin-left: 18px; color: #f4efe5; text-decoration: none; font-size: 14px; }
-    nav a:hover, nav a:focus { color: #e2b86e; }
-    main { padding: 72px 0 90px; }
-    .eyebrow { color: #e2b86e; letter-spacing: .18em; text-transform: uppercase; font-size: 13px; font-weight: 700; }
-    h1 { max-width: 850px; margin: 10px 0 18px; font-size: clamp(42px, 8vw, 84px); line-height: 1.06; letter-spacing: -.05em; }
-    .tagline { color: #e2b86e; font-size: clamp(20px, 3vw, 29px); font-weight: 700; }
-    .intro { max-width: 700px; font-size: 19px; color: #d8d0c3; }
-    .button { display: inline-block; margin-top: 24px; padding: 12px 22px; border-radius: 4px; background: #e2b86e; color: #171512; font-weight: 700; text-decoration: none; }
-    section { padding: 54px 0; border-top: 1px solid #ffffff25; }
-    h2 { font-size: clamp(27px, 4vw, 38px); line-height: 1.2; margin: 0 0 18px; }
-    p { max-width: 740px; }
-    .topics { display: flex; flex-wrap: wrap; gap: 10px; padding: 0; list-style: none; }
-    .topics li { border: 1px solid #a98c5a; border-radius: 99px; padding: 8px 15px; }
-    footer { padding: 28px 0; border-top: 1px solid #ffffff25; color: #c6bcaf; font-size: 14px; }
-    @media (max-width: 600px) { main { padding-top: 56px; } header .wrap { align-items: flex-start; flex-direction: column; } nav a { margin: 0 18px 0 0; } }
+    :root { --ink:#211812; --brown:#38261c; --gold:#e9ad5e; --cream:#f5eddd; --muted:#c9bbaa; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--ink); color:var(--cream); font:16px/1.6 Arial,Helvetica,sans-serif; }
+    a { color:inherit; }
+    .wrap { width:min(1180px, calc(100% - 42px)); margin:auto; }
+    nav { background:#1a130f; border-bottom:1px solid #ffffff20; }
+    nav .wrap { display:flex; justify-content:space-between; align-items:center; gap:20px; min-height:70px; }
+    .brand { color:var(--gold); font-weight:800; letter-spacing:.09em; text-decoration:none; font-size:15px; }
+    .links { display:flex; flex-wrap:wrap; gap:23px; }
+    .links a { text-decoration:none; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.09em; }
+    .links a:hover,.links a:focus { color:var(--gold); }
+    .hero { display:grid; grid-template-columns:minmax(0, 1fr) minmax(0, .85fr); min-height:590px; background:#2c211a; }
+    .hero-copy { align-self:center; padding:68px max(34px,calc((100vw - 1180px)/2)) 68px max(34px,calc((100vw - 1180px)/2)); padding-right:44px; }
+    .eyebrow { margin:0 0 15px; color:var(--gold); font-size:12px; letter-spacing:.19em; font-weight:800; text-transform:uppercase; }
+    h1 { margin:0; max-width:650px; font:800 clamp(44px,6vw,84px)/.98 Georgia,serif; letter-spacing:-.045em; }
+    .tagline { color:var(--gold); margin:26px 0 18px; font-size:clamp(18px,2vw,24px); font-weight:800; line-height:1.35; }
+    .intro { max-width:570px; color:#e5d9ca; font-size:18px; }
+    .button { display:inline-block; margin-top:24px; background:var(--gold); color:#1a130f; padding:13px 20px; text-decoration:none; font-weight:800; border-radius:3px; }
+    .portrait { display:block; width:100%; height:100%; min-height:590px; object-fit:cover; object-position:center 30%; }
+    section { padding:75px 0; }
+    h2 { margin:0 0 22px; font:800 clamp(32px,4vw,48px)/1.1 Georgia,serif; }
+    h3 { margin:0 0 9px; font-size:21px; }
+    p { max-width:750px; }
+    .lead { color:#dacbb9; font-size:18px; }
+    .themes { background:#f2eadb; color:#302118; }
+    .four { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; }
+    .card { min-height:210px; background:#fffaf0; padding:25px; border-top:5px solid #a75c31; border-radius:4px; }
+    .card h3 { color:#9f4d2a; letter-spacing:.05em; }
+    .card p { font-size:15px; line-height:1.55; margin-bottom:0; }
+    .photos { background:#261b15; }
+    .photo-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+    figure { margin:0; background:#38271d; overflow:hidden; border-radius:4px; }
+    figure img { width:100%; aspect-ratio:4/3; object-fit:cover; display:block; }
+    figure.logo img { object-fit:contain; background:#e7e6de; padding:13px; }
+    figcaption { padding:13px 17px; color:#eacda8; font-weight:700; }
+    .episodes { background:#f2eadb; color:#302118; }
+    .episode-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+    .episode { padding:28px; border:1px solid #a88b70; border-radius:5px; background:#fffaf0; }
+    .episode small { color:#9f4d2a; font-weight:800; letter-spacing:.13em; }
+    .episode h3 { margin-top:9px; font:800 26px/1.2 Georgia,serif; }
+    .quote { background:#38261c; color:#f7e8d2; text-align:center; font:italic clamp(24px,3vw,37px)/1.4 Georgia,serif; }
+    .quote .wrap { max-width:900px; }
+    footer { padding:37px 0; background:#1a130f; color:var(--muted); text-align:center; }
+    footer strong { color:var(--gold); }
+    @media (max-width:800px) {
+      nav .wrap { padding:16px 0; align-items:flex-start; flex-direction:column; }
+      .links { gap:15px; }
+      .hero { grid-template-columns:1fr; }
+      .hero-copy { padding:55px 24px; }
+      .portrait { height:auto; min-height:0; max-height:660px; object-position:center 25%; }
+      .four { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .photo-grid { grid-template-columns:1fr; }
+    }
+    @media (max-width:520px) {
+      .four,.episode-grid { grid-template-columns:1fr; }
+      section { padding:55px 0; }
+      .hero-copy { padding:46px 21px; }
+    }
   </style>
 </head>
 <body>
-  <header><div class="wrap"><a class="brand" href="#home">The Jess Alan Krick Podcast</a><nav aria-label="Main navigation"><a href="#about">About</a><a href="#topics">Topics</a><a href="#contact">Connect</a></nav></div></header>
-  <main id="home" class="wrap">
-    <p class="eyebrow">A podcast about making things happen</p>
-    <h1>The Jess Alan Krick Podcast</h1>
-    <p class="tagline">Build it. Fix it. Grow it. Live it.</p>
-    <p class="intro">Real stories and practical conversations about working with your hands, living off grid, growing a ranch, making music, and staying curious about life.</p>
-    <a class="button" href="#about">Explore the podcast</a>
-    <section id="about"><h2>Meet Jess</h2><p>Jess Alan Krick brings a lifetime of hands on experience and an open mind to every conversation. From construction and equipment to ranching, music, health, and the body, mind, and spirit, this is a place to share what we learn by doing.</p></section>
-    <section id="topics"><h2>What we talk about</h2><ul class="topics"><li>Off grid living</li><li>Building and repair</li><li>Farming and ranching</li><li>Heavy equipment</li><li>Excavation and utilities</li><li>Coffee roasting</li><li>Automobiles</li><li>Music</li><li>Health and fitness</li></ul></section>
-    <section id="contact"><h2>Stay tuned</h2><p>Episodes and listening links are coming soon. Bookmark this page and check back for updates.</p></section>
+  <nav><div class="wrap"><a class="brand" href="#home">THE JESS ALAN KRICK PODCAST</a><div class="links"><a href="#about">About</a><a href="#themes">Explore</a><a href="#photos">Photos</a><a href="#episodes">Episodes</a></div></div></nav>
+  <header class="hero" id="home">
+    <div class="hero-copy"><p class="eyebrow">Real stories. Real people. A lifetime of learning by doing.</p><h1>Pull up a chair.</h1><p class="tagline">Build it. Fix it. Grow it. Live it.</p><p class="intro">From working the land and running equipment to roasting coffee and making music, this is a place to share what we learn by doing.</p><a class="button" href="#about">Meet Jess</a></div>
+    <img class="portrait" src="jess-portrait.jpg" alt="Jess outdoors wearing a straw hat and sunglasses">
+  </header>
+  <main>
+    <section id="about"><div class="wrap"><p class="eyebrow">About Jess</p><h2>A lifetime of learning by doing.</h2><p class="lead">I’m Jess Krick. I’ve never been very good at staying in one lane. I’ve worked with my hands, run equipment, built and remodeled, raised cattle, worked the land, roasted coffee, made music, worked on machines—and kept asking questions along the way.</p><p>Sometimes you just want to get away from the noise, put on an old pair of boots, work in the dirt and reconnect with what’s real. Come along. We’ll learn together.</p></div></section>
+    <section class="themes" id="themes"><div class="wrap"><p class="eyebrow">The conversations</p><h2>Build it. Fix it. Grow it. Live it.</h2><div class="four"><div class="card"><h3>BUILD IT</h3><p>Construction, excavation, underground utilities, off-grid systems and hands-on projects.</p></div><div class="card"><h3>FIX IT</h3><p>Tools, vehicles, equipment, troubleshooting and making things work again.</p></div><div class="card"><h3>GROW IT</h3><p>Ranching, cattle, farming, land, food, coffee roasting and self-sufficiency.</p></div><div class="card"><h3>LIVE IT</h3><p>Music, health, fitness, body, mind, spirit and lessons from a hands-on life.</p></div></div></div></section>
+    <section class="photos" id="photos"><div class="wrap"><p class="eyebrow">From Jess’s own photos</p><h2>Life and work behind the mic.</h2><div class="photo-grid"><figure><img src="excavator.jpg" alt="Jess’s yellow John Deere excavator on ranch land" loading="lazy"><figcaption>Heavy equipment &amp; excavation</figcaption></figure><figure><img src="coffee-roaster.jpg" alt="Krick Coffee roaster in Jess’s workshop" loading="lazy"><figcaption>Krick Coffee</figcaption></figure><figure class="logo"><img src="krick-ranch.jpg" alt="Krick Ranch brand and logo" loading="lazy"><figcaption>Krick Ranch</figcaption></figure></div></div></section>
+    <section class="episodes" id="episodes"><div class="wrap"><p class="eyebrow">Coming soon</p><h2>Conversations on the way.</h2><div class="episode-grid"><div class="episode"><small>PLANNED CONVERSATION</small><h3>Pull Up a Chair</h3><p>Meet Jess and hear why this show brings together work, the land, and a lifetime of curiosity.</p></div><div class="episode"><small>PLANNED CONVERSATION</small><h3>Get Your Hands Dirty</h3><p>Working with your hands, reconnecting with the land, and finding what matters.</p></div></div></div></section>
+    <section class="quote"><div class="wrap">“Sometimes you just have to be willing to get your hands dirty.”</div></section>
   </main>
-  <footer><div class="wrap">© 2026 The Jess Alan Krick Podcast</div></footer>
+  <footer><div class="wrap"><strong>The Jess Alan Krick Podcast</strong><br>Build it. Fix it. Grow it. Live it.<br><small>Episodes and listening links are coming soon.</small></div></footer>
 </body>
 </html>
